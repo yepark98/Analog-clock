@@ -16,5 +16,12 @@ function clockRun() {
     node.style.transform = secondValue;
   });
 
+  let minute = date.getMinutes(); // Date 객체의 분 값을 현지 시간에 맞춰 반환
+  let minuteAngle = minute * 6;
+  let minuteValue = "rotate(" + minuteAngle + "deg)";
+  document.querySelectorAll(".minute").forEach((node) => {
+    node.style.transform = minuteValue;
+  });
+
   setTimeout(clockRun, 1000); // 지연시간 1초(1000) 뒤에 실행될 코드 설정
 }
